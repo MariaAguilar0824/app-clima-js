@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:1s;
+}
+
+/* Fondos dinámicos */
+
+body.despejado{
+    background:linear-gradient(135deg,#56ccf2,#2f80ed);
+}
+
+body.nublado{
+    background:linear-gradient(135deg,#757f9a,#d7dde8);
+}
+
+body.lluvia{
+    background:linear-gradient(135deg,#3a6073,#16222a);
+}
+
+body.tormenta{
+    background:linear-gradient(135deg,#232526,#414345);
+}
+
+body.nieve{
+    background:linear-gradient(135deg,#e6dada,#274046);
+}
+
+/* Caja */
+
+.contenedor{
+    width:370px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+    animation:entrada .8s;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    margin-bottom:15px;
+    outline:none;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#ffcc00;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:#ffd93d;
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+#resultado{
+    margin-top:20px;
+}
+
+/* Tarjeta */
+
+.clima-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    animation:entrada .6s;
+}
+
+.icono-clima{
+    font-size:70px;
+    animation:flotar 2s infinite alternate;
+}
+
+@keyframes flotar{
+    from{transform:translateY(0)}
+    to{transform:translateY(-10px)}
+}
+
+.temperatura{
+    font-size:38px;
+    font-weight:bold;
+    color:#ff4b2b;
+}
+
+.descripcion{
+    color:#666;
+    margin:10px 0;
+}
+
+.mensaje{
+    margin-top:10px;
+    color:#444;
+    font-style:italic;
+}
+
+.detalles{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:15px;
+}
+
+.detalle{
+    background:#f2f2f2;
+    padding:10px;
+    border-radius:10px;
+}
+
+.pronostico{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+.dia{
+    background:#f7f7f7;
+    padding:10px;
+    border-radius:10px;
+}
+
+.error{
+    background:#ff5252;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+}
+
+.cargando{
+    color:white;
+    font-size:18px;
+}
